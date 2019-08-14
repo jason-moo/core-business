@@ -1,5 +1,7 @@
 package com.xzn.shop.api.impl;
 
+import com.xzn.common.execptions.ExceptionFactory;
+import com.xzn.common.execptions.XException;
 import com.xzn.shop.api.ShopRemoteService;
 import com.xzn.shop.dto.GoodsDTO;
 import com.xzn.user.api.UserRemoteService;
@@ -32,9 +34,8 @@ public class ShopRemoteController implements ShopRemoteService {
     @Override
     public String buy(@RequestParam("goodName") String goodName){
 
-        System.out.println(goodName + "购买成功");
+        throw ExceptionFactory.create("E_10031");
 
-        return "OK";
     }
 
     @Override

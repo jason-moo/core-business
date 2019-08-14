@@ -53,7 +53,7 @@ public class MysqlGenerator {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath + "/user-web/src/main/java");
+        gc.setOutputDir(projectPath + "/core-user/user-web/src/main/java");
         gc.setOpen(false);
         gc.setAuthor("xuezn");
         gc.setBaseResultMap(true);
@@ -87,7 +87,7 @@ public class MysqlGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输入文件名称
-                return projectPath + "/dpp-web/src/main/resources/mapper/" + pc.getModuleName()
+                return projectPath + "resources/mapper/" + pc.getModuleName()
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });

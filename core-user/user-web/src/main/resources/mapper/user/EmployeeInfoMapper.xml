@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xzn.user.mapper.EmployeeInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xzn.user.entity.EmployeeInfo">
+        <id column="code" property="code" />
+        <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="job" property="job" />
+        <result column="type" property="type" />
+        <result column="job_seq" property="jobSeq" />
+        <result column="job_level" property="jobLevel" />
+        <result column="nation" property="nation" />
+        <result column="sex" property="sex" />
+        <result column="culture" property="culture" />
+        <result column="face" property="face" />
+        <result column="birth_date" property="birthDate" />
+        <result column="id_number" property="idNumber" />
+        <result column="native_place" property="nativePlace" />
+        <result column="residence_properties" property="residenceProperties" />
+        <result column="employment_situation" property="employmentSituation" />
+        <result column="pk_corp" property="pkCorp" />
+        <result column="work_time" property="workTime" />
+        <result column="leave_time" property="leaveTime" />
+        <result column="join_time" property="joinTime" />
+        <result column="technical_title" property="technicalTitle" />
+        <result column="card_number" property="cardNumber" />
+        <result column="meal_card" property="mealCard" />
+        <result column="meal_allowance" property="mealAllowance" />
+        <result column="pay_grade" property="payGrade" />
+        <result column="oa_number" property="oaNumber" />
+        <result column="mobile" property="mobile" />
+        <result column="landline" property="landline" />
+        <result column="email" property="email" />
+        <result column="qq" property="qq" />
+        <result column="weChat" property="weChat" />
+        <result column="pk_dept" property="pkDept" />
+        <result column="dept_name" property="deptName" />
+        <result column="pk_area" property="pkArea" />
+        <result column="area_name" property="areaName" />
+        <result column="corp_name" property="corpName" />
+        <result column="pk_psndoc" property="pkPsndoc" />
+        <result column="pk_om_job" property="pkOmJob" />
+    </resultMap>
+
+</mapper>

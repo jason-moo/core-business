@@ -1,5 +1,6 @@
 package com.xzn.user.api.impl;
 
+import com.xzn.common.execptions.BusinessException;
 import com.xzn.redis.utils.RedisUtils;
 import com.xzn.shop.api.ShopRemoteService;
 import com.xzn.user.api.UserRemoteService;
@@ -37,9 +38,7 @@ public class UserRemoteController implements UserRemoteService {
     @Override
     public String login2(@RequestParam("userName") String userName){
 
-        System.out.println(userName + "登陆成功");
-
-        return "OK2";
+        throw new BusinessException("sasasas");
     }
 
 }

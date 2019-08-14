@@ -12,6 +12,12 @@ eureka:
 spring:
   application:
     name: user-service
+  data:
+    elasticsearch:
+      cluster-name: my-test
+      cluster-nodes: 192.168.11.188:9300
+      repositories:
+        enabled: true
   rabbitmq:
     host: 192.168.11.188
     port: 5672
