@@ -10,15 +10,21 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:8671/eureka/
 feign:
+  httpclient:
+    enabled: true
+    max-connections: 200
+    max-connections-per-route: 50
   hystrix:
     enabled: true
-#hystrix:
-#  command:
-#    default:
-#      execution:
-#        isolation:
-#          thread:
-#            timeoutInMilliseconds: 3000
+  client:
+    config:
+      default:
+        connectTimeout: 3000
+        readTimeout: 3000
+        loggerLevlel: full
+#        errorDecoder: com.xzn.fegin.BusinessErrorDecoder
+#        requestInterceptors:
+#          - com.xzn.fegin.FeignBasicRequestInterceptor
 hystrix:
   command:
     default:
@@ -26,7 +32,7 @@ hystrix:
         isolation:
           strategy: SEMAPHORE
           thread:
-            timeoutInMilliseconds: 3000
+            timeoutInMilliseconds: 4000
 spring:
   application:
     name: user-service
@@ -82,3 +88,4 @@ mybatis-plus:
 
 logging:
   config: classpath:log/logback.xml
+
