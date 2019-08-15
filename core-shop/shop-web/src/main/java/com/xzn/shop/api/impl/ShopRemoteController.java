@@ -6,6 +6,7 @@ import com.xzn.shop.api.ShopRemoteService;
 import com.xzn.shop.dto.GoodsDTO;
 import com.xzn.user.api.UserRemoteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,14 +22,17 @@ public class ShopRemoteController implements ShopRemoteService {
     @Autowired
     private UserRemoteService userRemoteService;
 
+    @Value("${server.port}")
+    private String port;
+
     @Override
     public String buy(@RequestParam("goodName") String goodName,@RequestParam("userName") String userName){
 
-        userRemoteService.login(userName);
+//        userRemoteService.login(userName);
+//
+//        System.out.println(goodName + "购买成功");
 
-        System.out.println(goodName + "购买成功");
-
-        return "OK";
+        return port;
     }
 
     @Override

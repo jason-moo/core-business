@@ -23,7 +23,7 @@ public class FeignConfiguration {
         return new FeignBasicRequestInterceptor();
     }
 
-    public static class FeignBasicRequestInterceptor implements RequestInterceptor{
+    public static class FeignBasicRequestInterceptor implements RequestInterceptor {
 
         @Autowired
         private HttpServletRequest httpServletRequest;
@@ -32,7 +32,9 @@ public class FeignConfiguration {
         public void apply(RequestTemplate requestTemplate) {
             String token = httpServletRequest.getHeader("accessToken");
             if (!StringUtils.isEmpty(token)){
-                requestTemplate.header("token",httpServletRequest.getHeader("accessToken"));
+                requestTemplate.header("accessToken",httpServletRequest.getHeader("accessToken"));
+            }else {
+                requestTemplate.header("accessToken","asdasdwgrefwadwqefqfwqfwqf");
             }
         }
     }
