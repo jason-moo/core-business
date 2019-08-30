@@ -1,0 +1,24 @@
+dataSources:
+  ds_0: !!com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.11.188:3306/order_0
+    username: root
+    password: 7356241
+  ds_1: !!com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.11.188:3306/order_1
+    username: root
+    password: 7356241
+shardingRule:
+  tables:
+    t_order:
+      logicTable: t_order  // 这个配置貌似没有用
+      actualDataNodes: ds_${0..1}.t_order${0..2}
+      databaseStrategy:
+        inline:
+          shardingColumn: user_id
+          algorithmExpression: ds_${user_id % 2}
+      tableStrategy:
+        inline:
+          shardingColumn: user_id
+          algorithmExpression: t_order${user_id % 3}

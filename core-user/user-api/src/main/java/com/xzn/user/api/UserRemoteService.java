@@ -16,4 +16,5 @@ public interface UserRemoteService {
 
     @RequestMapping("/login")
     String login2(@RequestParam("userName") String userName);
+    
 }
